@@ -144,7 +144,7 @@ const AttendancePage = ({
     setMarking(true);
     try {
       const response = await fetch(
-        "http://localhost:5000/api/attendance/mark",
+        `${import.meta.env.VITE_API_BASE_URL}/api/attendance/mark`,
         {
           method: "POST",
           headers: {
@@ -193,7 +193,7 @@ const AttendancePage = ({
 
     setApplying(true);
     try {
-      const response = await fetch("http://localhost:5000/api/leave/apply", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/leave/apply`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

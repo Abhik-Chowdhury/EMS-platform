@@ -33,7 +33,7 @@ const Home = () => {
         const user = getEmployeeUser();
         if (!user || !user.token) return;
         try {
-            const attRes = await fetch(`http://localhost:5000/api/attendance`, {
+            const attRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/attendance`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${user.token}`,
@@ -41,7 +41,7 @@ const Home = () => {
             });
             const attData = await attRes.json();
             // leaves data from server side
-            const leavesRes = await fetch(`http://localhost:5000/api/leave/`, {
+            const leavesRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/leave/`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${user.token}`,

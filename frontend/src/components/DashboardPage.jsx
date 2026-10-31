@@ -121,7 +121,7 @@ const DashboardPage = ({ records, joiningDate }) => {
             if (!user || !user.token) return;
             try {
                 const response = await fetch(
-                    `http://localhost:5000/api/announcements`,
+                    `${import.meta.env.VITE_API_BASE_URL}/api/announcements`,
                     {
                         headers: {
                             Authorization: `Bearer ${user.token}`,
